@@ -10,7 +10,7 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v2  
           - name: Add Source
-            run: dotnet nuget add source https://nuget.pkg.github.com/VORNIR/index.json -n "Vorn" --username mobinseven --password  ${{ secrets.GH_PAT }}
+            run: dotnet nuget add source https://nuget.pkg.github.com/VORNIR/index.json -n "Vorn" --username mobinseven --password  ${{ secrets.GH_PAT }} --store-password-in-clear-text
           - name: Pack
             working-directory: ./Vorn.Hub.EntityHub
             run: dotnet pack --configuration Release  --output .
