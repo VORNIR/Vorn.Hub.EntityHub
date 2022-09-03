@@ -1,0 +1,16 @@
+name: Pack
+on:
+    release:
+      types: [published]
+jobs:
+    pack-on-release:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v2  
+          - name: Pack
+            working-directory: ./Vorn.EntityHub
+            run: dotnet pack --configuration Release  --output .
+          - name: Push
+            working-directory: ./Vorn.EntityHub
+            run: dotnet nuget push Vorn.EntityHub.*.nupkg --source https://nuget.pkg.github.com/VORNIR/index.json --api-key ${{ secrets.GH_PAT }}
