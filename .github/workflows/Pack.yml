@@ -9,7 +9,8 @@ jobs:
       steps:
           - name: Checkout
             uses: actions/checkout@v2  
-          - run: dotnet nuget add source https://nuget.pkg.github.com/VORNIR/index.json -n "Vorn"
+          - name: Add Source
+            run: dotnet nuget add source https://nuget.pkg.github.com/VORNIR/index.json -n "Vorn" --username mobinseven --password  ${{ secrets.GH_PAT }}
           - name: Pack
             working-directory: ./Vorn.Hub.EntityHub
             run: dotnet pack --configuration Release  --output .
