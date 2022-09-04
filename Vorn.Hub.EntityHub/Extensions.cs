@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using Vorn.Haas.Hubs.EntityHub;
+using Vorn.Hub.EntityHub;
 using Vorn.Hub.EntityHub;
 
 public static class Extensions

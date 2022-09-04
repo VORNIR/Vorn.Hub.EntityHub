@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Vorn.Haas.Hubs.EntityHub;
+namespace Vorn.Hub.EntityHub;
 
 public class EntityTrace<T>
 {

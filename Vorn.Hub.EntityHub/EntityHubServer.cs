@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-namespace Vorn.Haas.Hubs.EntityHub;
+namespace Vorn.Hub.EntityHub;
 public interface IEntityHubServer
 {
     Task SubscribeTo(string typeName);

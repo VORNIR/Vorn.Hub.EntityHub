@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Options;
-using Vorn.Haas.Hubs.EntityHub;
+using Vorn.Hub.EntityHub;
 using Vorn.Hub;
 using Vorn.Hub.EntityHub;
 

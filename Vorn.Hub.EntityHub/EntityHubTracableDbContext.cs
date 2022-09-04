@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Vorn.Haas.Hubs.EntityHub;
+namespace Vorn.Hub.EntityHub;
 public class EntityHubTracableDbContext : DbContext
 {
     private readonly IHubContext<EntityHubServer, IEntityHubClientEvents> hubContext;
