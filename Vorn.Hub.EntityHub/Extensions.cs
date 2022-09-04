@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Vorn.Haas.Hubs.EntityHub;
+using Vorn.Hub.EntityHub;
+
 public static class Extensions
 {
     public static object? InvokeAsGeneric(this Type? constructor, string methodName, Type T, object? initiator, params object?[]? parameters)
@@ -21,7 +23,7 @@ public static class Extensions
             InvokeAsGeneric(typeof(Extensions), nameof(AddEntityHubClient), type, null, webApplicationBuilder);
         }
     }
-    public static void AddEntityHubClient<T>(this WebApplicationBuilder webApplicationBuilder) where T : class
+    public static void AddEntityHubClient<T>(this WebApplicationBuilder webApplicationBuilder) where T : IEntityHubTracable
     {
         webApplicationBuilder.Services.AddScoped<IEntityHubClient<T>, EntityHubClient<T>>();
     }
