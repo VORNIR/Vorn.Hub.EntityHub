@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>Vorn.Hub.EntityHub</PackageId>
-		<Version>0.2.1</Version>
+		<Version>0.2.2</Version>
 		<Company>Vorn</Company>
 		<PackageDescription>Vorn Entity Hub Class</PackageDescription>
 		<RepositoryUrl>https://github.com/VORNIR/Vorn.Hub.EntityHub</RepositoryUrl>

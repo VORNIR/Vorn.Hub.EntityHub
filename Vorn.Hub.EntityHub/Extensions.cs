@@ -16,7 +16,6 @@ public static class Extensions
     }
     public static void AddEntityHubClients(this WebApplicationBuilder webApplicationBuilder)
     {
-        webApplicationBuilder.Services.Configure<EntityHubConfiguration>(webApplicationBuilder.Configuration.GetSection(EntityHubConfiguration.Section));
         HashSet<Type> types = GetEntityTracableTypes();
         foreach(Type type in types)
         {
@@ -25,6 +24,7 @@ public static class Extensions
     }
     public static void AddEntityHubClient<T>(this WebApplicationBuilder webApplicationBuilder) where T : IEntityHubTracable
     {
+        webApplicationBuilder.Services.Configure<EntityHubConfiguration>(webApplicationBuilder.Configuration.GetSection(EntityHubConfiguration.Section));
         webApplicationBuilder.Services.AddScoped<IEntityHubClient<T>, EntityHubClient<T>>();
     }
     public static void MapEntityHub(this WebApplication app)
